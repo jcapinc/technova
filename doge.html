@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+<h1>Doggos!</h1>
+<div id="root"></div>
+<script>
+
+async function addDog() {
+  const response = await fetch("https://dog.ceo/api/breeds/image/random");
+  const { message } = await response.json();
+  const img = document.createElement("img");
+  img.src = message;
+  img.style.height = "300px";
+  const root = document.getElementById("root");
+  root.appendChild(img);
+  return message;
+}
+
+/// "How to call a function in javascript"
+
+/// "How to write to console in javascript"
+
+// Write your code here:
+function gibDogs() {
+  addDog();
+  addDog();
+  addDog();
+  addDog();
+  addDog();
+  addDog();
+  addDog();
+  addDog();
+  addDog();
+  addDog();
+}
+
+for (
+  let iteration = 0; 
+  iteration < 10; 
+  iteration = iteration + 1
+) {
+  gibDogs();
+}
+
+
+</script>
+</body>
+</html>
